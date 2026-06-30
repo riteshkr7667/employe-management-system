@@ -7,6 +7,7 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import AddEmployee from './component/AddEmployee'
 import EmployeeDetails from './component/EmployeeDetails'
 import EditEmployee from './component/EditEmployee'
+import SearchEmployee from './component/SearchEmployee'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/add' element={<AddEmployee/>}/>
         <Route path='/employee/:id' element={<EmployeeDetails/>}/>
         <Route path='/employee/edit/:id' element={<EditEmployee/>}/>
+        <Route path='/search' element={<SearchEmployee/>}/>
       </Routes>
       </BrowserRouter>
      </div> 

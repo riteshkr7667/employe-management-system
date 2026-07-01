@@ -13,6 +13,10 @@ function EmployeeList(){
         .then((res)=>res.json()).then((data)=>setEmployees((data.users)))
     },[])
     const DeleteEmployee=(id)=>{
+
+        if(!window.confirm("Are you sure you want to delete this employee?")){
+            return;
+        }
         fetch(`https://dummyjson.com/user/${id}`,{
             method:'DELETE'
         }).then((res)=>res.json()).then((data)=>{console.log(data); 

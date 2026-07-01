@@ -21,15 +21,34 @@ function SearchEmployee(){
         <div>
             <h2>Search Employee</h2>
             <input type="text" placeholder="Search Employee" value={search} onChange={(e)=>setSearch(e.target.value)} />
-            <button onClick={SearchEmployee}>Search</button>
+          <br></br><br></br>  <button onClick={SearchEmployee}>Search</button>
+            <br></br><br></br>
+            <table border={1}>
+             <thead>
+                <tr>
+                    <th>ID</th>
+                     <th>Name</th>
+                      <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                        </tr>
+</thead>
+<tbody>             
 
-            {result.map((e)=>(
-                <div key={e.id}>
+         {result.map((e)=>(
+            <tr>
 
-                    <p>{e.firstName} {e.lastName}</p>
-                    <p>{e.email}</p>
-                </div>
-            ))}
+                <td>{e.id}</td>
+                <td>{e.firstName} {e.lastName}</td>
+                <td>{e.email}</td>
+                <td>{e.phone}</td>
+                <td> {e.address?.city}</td>
+                <td>{e.company?.name}</td>
+            </tr>
+         ))}
+        </tbody>
+        </table>
         </div>
     )
 }

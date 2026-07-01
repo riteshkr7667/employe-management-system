@@ -21,7 +21,7 @@ function EmployeeList(){
             method:'DELETE'
         }).then((res)=>res.json()).then((data)=>{console.log(data); 
             alert("Employee Deleted Successfully")
-        navigate("/");
+        setEmployees(emp.filter((e) => e.id !== id));
         });
     }
 
